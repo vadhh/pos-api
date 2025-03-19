@@ -14,11 +14,11 @@ return [
     |
     */
 
-    'paths' => ['api/*'],
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://localhost:5175'],
+    'allowed_origins' => ['http://localhost:5173'], // Vue.js dev server default port
 
     'allowed_origins_patterns' => [],
 

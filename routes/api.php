@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\V1\CustomerController;
 use App\Http\Controllers\Api\V1\ProductController;
 use App\Http\Controllers\Api\V1\SaleController;
+use App\Http\Controllers\Api\V1\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,8 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('v1')->group(function () {
     // Product Routes
     Route::get('/products', [ProductController::class, 'index']);
+    Route::post('/products', [ProductController::class, 'store']);
+    Route::get('/products/{product}', [ProductController::class, 'show']);
+    Route::put('/products/{product}', [ProductController::class, 'update']);
+    Route::delete('/products/{product}', [ProductController::class, 'destroy']);
     Route::get('/categories', [ProductController::class, 'categories']);
-    Route::delete('/products/{id}', [ProductController::class, 'destroy']);
 
     // Customer Routes
     Route::apiResource('customers', CustomerController::class);
@@ -28,4 +32,7 @@ Route::prefix('v1')->group(function () {
     // Sale Routes
     Route::apiResource('sales', SaleController::class);
     Route::get('sales/{sale}/items', [SaleController::class, 'items'])->name('sales.items');
+
+    // Category Routes
+    Route::apiResource('categories', CategoryController::class);
 });
