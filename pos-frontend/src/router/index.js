@@ -4,6 +4,7 @@ import ProductsView from "../views/ProductsView.vue";
 import DashboardView from "../views/DashboardView.vue";
 import TestView from "../views/TestView.vue";
 import DirectProducts from "../views/DirectProducts.vue";
+import WorkflowView from "../views/WorkflowView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -35,6 +36,11 @@ const router = createRouter({
                     path: "/products",
                     name: "products",
                     component: ProductsView,
+                },
+                {
+                    path: "/workflows",
+                    name: "workflows",
+                    component: WorkflowView,
                 },
             ],
         },

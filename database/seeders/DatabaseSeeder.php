@@ -6,6 +6,9 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
+    /**
+     * Seed the application's database.
+     */
     public function run(): void
     {
         $this->call([
@@ -13,6 +16,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             ProductSeeder::class,
             CustomerSeeder::class,
+            WorkflowSeeder::class,
+            WorkflowAssignmentSeeder::class,
         ]);
     }
 }

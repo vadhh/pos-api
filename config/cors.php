@@ -18,7 +18,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://localhost:5173'], // Vue.js dev server default port
+    'allowed_origins' => ['http://localhost:5173', 'http://localhost:5174'], // Vue.js dev server ports
 
     'allowed_origins_patterns' => [],
 

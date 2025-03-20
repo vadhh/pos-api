@@ -4,6 +4,8 @@ use App\Http\Controllers\Api\V1\CustomerController;
 use App\Http\Controllers\Api\V1\ProductController;
 use App\Http\Controllers\Api\V1\SaleController;
 use App\Http\Controllers\Api\V1\CategoryController;
+use App\Http\Controllers\Api\V1\WorkflowController;
+use App\Http\Controllers\Api\V1\WorkflowStepController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,4 +37,8 @@ Route::prefix('v1')->group(function () {
 
     // Category Routes
     Route::apiResource('categories', CategoryController::class);
+
+    // Workflow Routes
+    Route::apiResource('workflows', WorkflowController::class);
+    Route::apiResource('workflows.steps', WorkflowStepController::class);
 });
