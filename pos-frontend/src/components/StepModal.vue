@@ -29,7 +29,7 @@ const closeModal = () => {
         <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
             <div class="flex items-center justify-between mb-5">
                 <h2 class="text-xl font-bold text-gray-900">
-                    {{ isEditing ? "Edit Step" : "Add Step" }}
+                    {{ isEditing ? "Edit Tahapan" : "Tambah Tahapan" }}
                 </h2>
                 <button @click="closeModal" class="text-gray-400 hover:text-gray-500">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -38,60 +38,60 @@ const closeModal = () => {
                 </button>
             </div>
             <form @submit.prevent="handleSubmit" class="space-y-4">
-                <div>
-                    <label class="text-sm font-medium text-gray-700 text-left">Nama</label>
+                <div class="text-left">
+                    <label class="block text-sm font-medium text-gray-700">Nama</label>
                     <input 
                         :value="formData.nama" 
                         @input="updateFormData('nama', $event.target.value)" 
                         type="text" 
                         required 
-                        class="mt-1 block w-full bg-white text-gray-700 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" 
+                        class="mt-1 block w-full bg-white text-gray-700 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm text-left" 
                         placeholder="Enter step name"
                     />
                 </div>
-                <div>
-                    <label class="text-sm font-medium text-gray-700 text-left">Deskripsi</label>
+                <div class="text-left">
+                    <label class="block text-sm font-medium text-gray-700">Deskripsi</label>
                     <textarea 
                         :value="formData.deskripsi" 
                         @input="updateFormData('deskripsi', $event.target.value)" 
                         rows="3" 
-                        class="mt-1 block w-full bg-white text-gray-700 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" 
+                        class="mt-1 block w-full bg-white text-gray-700 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm text-left" 
                         placeholder="Enter step description"
                     ></textarea>
                 </div>
-                <div>
-                    <label class="text-sm font-medium text-gray-700 text-left">Urutan</label>
+                <div class="text-left">
+                    <label class="block text-sm font-medium text-gray-700">Urutan</label>
                     <input 
                         :value="formData.urutan" 
                         @input="updateFormData('urutan', parseInt($event.target.value) || 1)" 
                         type="number" 
                         required 
                         min="1" 
-                        class="mt-1 block w-full bg-white text-gray-700 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" 
+                        class="mt-1 block w-full bg-white text-gray-700 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm text-left" 
                         placeholder="Enter step order"
                     />
                 </div>
-                <div>
-                    <label class="text-sm font-medium text-gray-700 text-left">Minimal Verifikasi</label>
+                <div class="text-left">
+                    <label class="block text-sm font-medium text-gray-700">Minimal Verifikasi</label>
                     <input 
                         :value="formData.minimal_verifikasi" 
                         @input="updateFormData('minimal_verifikasi', parseInt($event.target.value) || 1)" 
                         type="number" 
                         required 
                         min="1" 
-                        class="mt-1 block w-full bg-white text-gray-700 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" 
+                        class="mt-1 block w-full bg-white text-gray-700 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm text-left" 
                         placeholder="Enter minimum verification"
                     />
                 </div>
-                <div>
-                    <label class="text-sm font-medium text-gray-700 text-left">Verifikator</label>
+                <div class="text-left">
+                    <label class="block text-sm font-medium text-gray-700">Verifikator</label>
                     <input 
                         :value="formData.verifikator" 
                         @input="updateFormData('verifikator', $event.target.value)" 
                         type="text" 
                         required 
-                        class="mt-1 block w-full bg-white text-gray-700 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" 
-                        placeholder="Enter verifier role"
+                        class="mt-1 block w-full bg-white text-gray-700 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm text-left" 
+                        placeholder="Enter verifier"
                     />
                 </div>
                 <div>
